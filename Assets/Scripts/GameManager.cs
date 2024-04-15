@@ -125,7 +125,7 @@ public class GameManager : MonoBehaviour
 
     void Fail()
     {
-        
+        successTxt.text = "fail";
         success.gameObject.SetActive(true);
 
     }
