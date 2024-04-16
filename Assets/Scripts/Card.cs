@@ -44,7 +44,7 @@ public class Card : MonoBehaviour
 
         audioSource.PlayOneShot(clip);
 
-
+        Pointer.instance.EffectOn(); // pointer effect activate
 
         anim.SetBool("isOpen", true);
         front.SetActive(true);

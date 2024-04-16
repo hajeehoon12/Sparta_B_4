@@ -117,9 +117,9 @@ public class GameManager : MonoBehaviour
         }
         else
         {
+            
             //Debug.Log("Fail"); // Goal1. When dismatch call fail
             firstCard.CloseCard();
-            
             secondCard.CloseCard();
             firstCard.ChangeColor();
             secondCard.ChangeColor();
@@ -145,9 +145,7 @@ public class GameManager : MonoBehaviour
 
     void Fail()
     {
-        audioSource.volume = 0.1f;
-        audioSource.PlayOneShot(clip4);
-        Invoke("VolumeUp", 1.0f);
+        DisMatch.instance.Bbik();
         successTxt.text = "fail -time";
         success.gameObject.SetActive(true);
         time -= 0.3f; // additional timeless when fail match
@@ -169,9 +167,6 @@ public class GameManager : MonoBehaviour
         firstCard = null;
 
     }
-    void VolumeUp()
-    {
-        audioSource.volume = 1.0f;
-    }
+   
     
 }
