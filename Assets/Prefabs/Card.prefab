@@ -10,6 +10,7 @@ GameObject:
   m_Component:
   - component: {fileID: 614642781398664741}
   - component: {fileID: 3151072766003928567}
+  - component: {fileID: 6923355503810723103}
   m_Layer: 0
   m_Name: Front
   m_TagString: Untagged
@@ -84,6 +85,18 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
+--- !u!114 &6923355503810723103
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2471374861834245939}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 438ff94fcc54de64cb65ad1fdce88db5, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &2594427279634390073
 GameObject:
   m_ObjectHideFlags: 0
@@ -136,6 +149,7 @@ MonoBehaviour:
   front: {fileID: 2471374861834245939}
   back: {fileID: 8832288090966458848}
   anim: {fileID: 8070037796384311587}
+  waiting: 0
   clip: {fileID: 8300000, guid: 94ab0407c092dda45ac7af2d35cab659, type: 3}
   frontImage: {fileID: 3151072766003928567}
   backImage: {fileID: 7603531959001008089}

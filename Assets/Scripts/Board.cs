@@ -39,6 +39,7 @@ public class Board : MonoBehaviour
         }
 
         GameManager.instance.cardCount = arr.Length;
+        GameManager.instance.cardMax = arr.Length;
 
 
     }

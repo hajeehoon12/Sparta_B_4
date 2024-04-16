@@ -1,5 +1,6 @@
 using System.Collections;
 using System.Collections.Generic;
+using Unity.VisualScripting;
 using UnityEngine;
 using UnityEngine.UI;
 
@@ -7,6 +8,7 @@ public class GameManager : MonoBehaviour
 {
 
     public static GameManager instance;
+    
 
     public Card firstCard;
     public Card secondCard;
@@ -17,18 +19,21 @@ public class GameManager : MonoBehaviour
     public GameObject endTxt;
     public GameObject success;
     public Text tryTxt;
+    public Text totalTxt;
 
     AudioSource audioSource;
     public AudioClip clip;
     public AudioClip clip2;
 
     public bool musicStart = true;
+    public bool waiting = false;
 
-    
-
+    float totalScore = 0f;
+    float waitTime = 0f;
 
 
     public int cardCount = 0;
+    public int cardMax;
     public int tryCount = 0;
 
 
@@ -46,15 +51,18 @@ public class GameManager : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
+        
+        endTxt.gameObject.SetActive(false);
         musicStart = true;
         Time.timeScale = 1f;
         audioSource = GetComponent<AudioSource>();
     }
-
+    
     // Update is called once per frame
     void Update()
     {
         time -= Time.deltaTime;
+        waitTime += Time.deltaTime;
         timeTxt.text = time.ToString("N2");
 
 
@@ -110,6 +118,7 @@ public class GameManager : MonoBehaviour
             Fail();
         }
 
+        firstCard.waiting = false;
         firstCard = null;
         secondCard = null;
         Invoke("Off", 0.4f);
@@ -121,23 +130,32 @@ public class GameManager : MonoBehaviour
         Time.timeScale = 0f;
         endTxt.gameObject.SetActive(true);
         tryTxt.text = tryCount.ToString();
+        totalScore = time - tryCount/10 + cardMax;
+        totalTxt.text = totalScore.ToString("N2");
     }
 
     void Fail()
     {
-        successTxt.text = "fail";
+        successTxt.text = "실패 - 시간추가감소";
         success.gameObject.SetActive(true);
+        time -= 0.3f; // 추가적인 시간감소
 
     }
     void Success()
     {
         successTxt.text = firstCard.idx.ToString();
         success.gameObject.SetActive(true);
+        time += 2f; // 매칭시 시간증가
     }
     void Off()
     {
         success.gameObject.SetActive(false);
     }
+    public void Wait5Sec()
+    {
+        firstCard.CloseCard();
+        firstCard = null;
 
-
+    }
+    
 }

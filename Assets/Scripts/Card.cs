@@ -12,6 +12,7 @@ public class Card : MonoBehaviour
     Color color;
 
     public Animator anim;
+    public bool waiting = false;
 
     AudioSource audioSource;
     public AudioClip clip;
@@ -54,6 +55,7 @@ public class Card : MonoBehaviour
         if (GameManager.instance.firstCard == null)
         {
             GameManager.instance.firstCard = this; // card Class의 정보를 넘겨준다.
+            
         }
         else //firstCard가 존재한다면, secondCard에 내정보를 넘겨주고 비교한다.
         {
@@ -96,6 +98,6 @@ public class Card : MonoBehaviour
 
         backImage.color = color;
     }
-
+    
 
 }
