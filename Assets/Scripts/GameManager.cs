@@ -2,6 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using Unity.VisualScripting;
 using UnityEngine;
+using UnityEngine.U2D;
 using UnityEngine.UI;
 
 public class GameManager : MonoBehaviour
@@ -29,7 +30,11 @@ public class GameManager : MonoBehaviour
 
     public bool musicStart = true;
     public bool defeated = false;
-    public bool waiting = false;
+    bool waiting = false;
+
+
+    
+
 
     float totalScore = 0f;
     float waitTime = 0f;
@@ -60,6 +65,8 @@ public class GameManager : MonoBehaviour
         defeated = false;
         Time.timeScale = 1f;
         audioSource = GetComponent<AudioSource>();
+
+
     }
     
     // Update is called once per frame
@@ -153,7 +160,7 @@ public class GameManager : MonoBehaviour
     }
     void Success()
     {
-        successTxt.text = firstCard.idx.ToString();
+        successTxt.text = Board.Instance.sprite[firstCard.idx].name.ToString();
         success.gameObject.SetActive(true);
         time += 2f; // add time when match
     }
