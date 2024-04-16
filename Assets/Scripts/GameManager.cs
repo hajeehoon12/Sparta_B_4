@@ -22,10 +22,13 @@ public class GameManager : MonoBehaviour
     public Text totalTxt;
 
     AudioSource audioSource;
-    public AudioClip clip;
-    public AudioClip clip2;
+    public AudioClip clip; // match
+    public AudioClip clip2; // when time is left half
+    public AudioClip clip3; // when match success
+    public AudioClip clip4; // when match failed
 
     public bool musicStart = true;
+    public bool defeated = false;
     public bool waiting = false;
 
     float totalScore = 0f;
@@ -54,6 +57,7 @@ public class GameManager : MonoBehaviour
         
         endTxt.gameObject.SetActive(false);
         musicStart = true;
+        defeated = false;
         Time.timeScale = 1f;
         audioSource = GetComponent<AudioSource>();
     }
@@ -68,6 +72,11 @@ public class GameManager : MonoBehaviour
 
         if (time < 0.0f)
         {
+            if (!defeated)
+            {
+                audioSource.PlayOneShot(clip3);
+            }
+            defeated = true;
             End();
         }
         if (time < maxtime/2 && musicStart)
@@ -136,16 +145,19 @@ public class GameManager : MonoBehaviour
 
     void Fail()
     {
-        successTxt.text = "실패 - 시간추가감소";
+        audioSource.volume = 0.1f;
+        audioSource.PlayOneShot(clip4);
+        Invoke("VolumeUp", 1.0f);
+        successTxt.text = "fail -time";
         success.gameObject.SetActive(true);
-        time -= 0.3f; // 추가적인 시간감소
+        time -= 0.3f; // additional timeless when fail match
 
     }
     void Success()
     {
         successTxt.text = firstCard.idx.ToString();
         success.gameObject.SetActive(true);
-        time += 2f; // 매칭시 시간증가
+        time += 2f; // add time when match
     }
     void Off()
     {
@@ -156,6 +168,10 @@ public class GameManager : MonoBehaviour
         firstCard.CloseCard();
         firstCard = null;
 
+    }
+    void VolumeUp()
+    {
+        audioSource.volume = 1.0f;
     }
     
 }
