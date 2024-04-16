@@ -95,3 +95,18 @@ firstCard 고르고 5초간 카운트 다운- 안고르면 다시닫기 기능 (
 - 나만의 카드 등장 효과 연출하기(파도타기 효과로 등장, 화면 밖에서 나선형으로 날아오는 등장 등)----------윤규석
 - 스테이지 선택과 현재 해금한 스테이지가 구분 가능한 시작 화면 만들기, 플레이 중 해당 스테이지의 최단 기록 띄워주기-------------박인수
 
+04-16 21:04
+
+하지훈
+
+12P 랜덤하게 섞는 부분 작업분배 파트 
+유니티 Resources 파일에 있는 rtan 폴더에 있는 모든 sprite type의 파일들을 긁어와서 
+board 의 sprite라는 이름의 배열에 저장하여 card의 idx number에 맞춰 배열형태로 가져와 파일명을 출력하도록 업데이트 했습니다!
+
+sprite = Resources.LoadAll<Sprite>("rtan");
+
+frontImage.sprite = Board.Instance.sprite[idx];
+
+successTxt.text = Board.Instance.sprite[firstCard.idx].name.ToString();
+
+의 코드 추가
