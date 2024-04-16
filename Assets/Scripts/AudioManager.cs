@@ -7,7 +7,7 @@ public class AudioManager: MonoBehaviour
     public static AudioManager instance;
 
 
-    AudioSource audioSource;
+    public AudioSource audioSource;
     public AudioClip clip;
     
 
