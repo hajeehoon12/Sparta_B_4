@@ -30,10 +30,7 @@ public class GameManager : MonoBehaviour
 
     public bool musicStart = true;
     public bool defeated = false;
-    bool waiting = false;
-
-
-    
+   // bool waiting = false;
 
 
     float totalScore = 0f;
@@ -54,6 +51,8 @@ public class GameManager : MonoBehaviour
         {
             instance = this;
         }
+
+        SetLv();
     }
 
     // Start is called before the first frame update
@@ -174,6 +173,12 @@ public class GameManager : MonoBehaviour
         firstCard = null;
 
     }
-   
-    
+
+    public void SetLv()
+    {
+        Board.Instance.cardNum = ConnectMgr.instance.cardNum;
+        maxtime = ConnectMgr.instance.maxTime;
+    }
+
+
 }

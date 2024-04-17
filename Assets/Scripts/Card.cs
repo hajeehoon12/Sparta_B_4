@@ -99,5 +99,5 @@ public class Card : MonoBehaviour
         backImage.color = color;
     }
     
-
+   
 }
