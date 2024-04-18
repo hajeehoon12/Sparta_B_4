@@ -192,8 +192,9 @@ public class GameManager : MonoBehaviour
 
     public void SetLv()
     {
-        Board.Instance.cardNum = 16;
-        maxtime = 30f;
+        
+        Board.Instance.cardNum = 16; 
+        maxtime = 30f; //default
         Board.Instance.cardNum = ConnectMgr.instance.cardNum;
         time = ConnectMgr.instance.maxtime;
         maxtime = ConnectMgr.instance.maxtime;
