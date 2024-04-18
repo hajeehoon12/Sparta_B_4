@@ -46,7 +46,7 @@ public class GameManager : MonoBehaviour
     public int cardMax;
     public int tryCount = 0;
 
-
+    
 
 
     float time = 30f;
@@ -158,7 +158,7 @@ public class GameManager : MonoBehaviour
         {
             time = 0;
         }
-
+        HighScoreManager.instance.Record_High_Score(totalScore);
     }
 
     void Fail()

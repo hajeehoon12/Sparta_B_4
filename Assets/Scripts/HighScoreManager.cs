@@ -5,16 +5,31 @@ using UnityEngine.UI;
 
 public class HighScoreManager : MonoBehaviour
 {
-
-    public float highScore = 0;
+    public static HighScoreManager instance;
+    public float highScore;
     public Text highScoreTxt;
 
-    void Record_High_Score(float totalScore)
+    private void Awake()
     {
-        if (totalScore > highScore)
+        if (instance == null)
         {
-            highScore = totalScore;
+            instance = this;
         }
+    }
+
+
+
+    
+
+    public void Record_High_Score(float totalScore)
+    {
+        if (PlayerPrefs.HasKey("highScore"))
+        {
+            highScore = PlayerPrefs.GetFloat("highScore");
+
+        
+        }
+        
     }
 
     private void Update()

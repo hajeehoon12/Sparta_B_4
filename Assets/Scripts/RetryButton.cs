@@ -13,6 +13,12 @@ public class RetryButton : MonoBehaviour
         AudioManager.instance.audioSource.Play();
     }
 
+    public void LevelSelect()
+    {
+        SceneManager.LoadScene("StartScene");
+        
+    }
+
     public void SelectLV()
     {
         StartBtn.SetActive(false);
