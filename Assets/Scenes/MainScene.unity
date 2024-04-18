@@ -380,6 +380,7 @@ GameObject:
   m_Component:
   - component: {fileID: 363228485}
   - component: {fileID: 363228486}
+  - component: {fileID: 363228487}
   m_Layer: 0
   m_Name: Board
   m_TagString: Untagged
@@ -419,6 +420,28 @@ MonoBehaviour:
   cardDist: 1.5
   cardNum: 16
   length: 0
+  level: 0
+--- !u!95 &363228487
+Animator:
+  serializedVersion: 5
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 363228484}
+  m_Enabled: 1
+  m_Avatar: {fileID: 0}
+  m_Controller: {fileID: 9100000, guid: 5b0d641c0ffde794fbbc6604ad1cd0f8, type: 2}
+  m_CullingMode: 0
+  m_UpdateMode: 0
+  m_ApplyRootMotion: 0
+  m_LinearVelocityBlending: 0
+  m_StabilizeFeet: 0
+  m_WarningMessage: 
+  m_HasTransformHierarchy: 1
+  m_AllowConstantClipSamplingOptimization: 1
+  m_KeepAnimatorStateOnDisable: 0
+  m_WriteDefaultValuesOnDisable: 0
 --- !u!1 &368335586
 GameObject:
   m_ObjectHideFlags: 0
@@ -924,6 +947,7 @@ MonoBehaviour:
   cardCount: 0
   cardMax: 0
   tryCount: 0
+  Level: 0
   maxtime: 30
 --- !u!4 &699483574
 Transform:
