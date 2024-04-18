@@ -195,7 +195,9 @@ public class GameManager : MonoBehaviour
         Board.Instance.cardNum = 16;
         maxtime = 30f;
         Board.Instance.cardNum = ConnectMgr.instance.cardNum;
-        maxtime = ConnectMgr.instance.maxTime;
+        time = ConnectMgr.instance.maxtime;
+        maxtime = ConnectMgr.instance.maxtime;
+        Board.Instance.iLv = ConnectMgr.instance.iLv;
     }
 
 

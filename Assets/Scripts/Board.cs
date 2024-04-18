@@ -2,7 +2,9 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using System.Linq;
-using UnityEngine.U2D;
+using UnityEngine.U2D;  // 이거 처음보는데?
+using UnityEngine.UI;
+
 
 public class Board : MonoBehaviour
 {
@@ -14,6 +16,8 @@ public class Board : MonoBehaviour
     public float cardDist;
     public int cardNum = 16;
     public int length;
+    float fPosCalibrationY = 0f;
+    public int iLv;
 
     private void Awake()
     {
@@ -44,15 +48,26 @@ public class Board : MonoBehaviour
         {
             GameObject go = Instantiate(card, this.transform); // ,board 밑에 생성
 
+            if (iLv > 1) fPosCalibrationY = 1.3f;
+
+            if (length > 4) {            
+            go.transform.localScale = new Vector2(cardDist - 0.1f, cardDist - 0.1f);
+            go.GetComponent<Card>().anim.enabled = false; // Disable animator "Card"
+            }
+
             float x = (i % length) * cardDist - cardDist * length / 2 + 0.5f * cardDist ; 
-            float y = (i / length) * cardDist - cardDist * length / 2 ;
-            
+            float y = (i / length) * cardDist - cardDist * length / 2 - fPosCalibrationY;            
             
             go.transform.position = new Vector2(x, y);
             
             go.GetComponent<Card>().Setting(arr[i]); // Board의 하위에 있는 Card Script의 Component를 가져와서 Setting 함수를 arr[i]라는 매개변수를 통해 실행
-            go.transform.localScale = new Vector2(cardDist - 0.9f, cardDist - 0.9f); //작동해요?
+           
+        }
 
+        if(3 == iLv) // Lv3 TimeTxt PosCalibration
+        {
+            Text timetxt = GameManager.instance.timeTxt;
+            timetxt.rectTransform.position += new Vector3( 0f, 132f, 0f);
         }
 
         GameManager.instance.cardCount = arr.Length;
