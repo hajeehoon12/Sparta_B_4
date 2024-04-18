@@ -5,9 +5,12 @@ using UnityEngine;
 public class ConnectMgr : MonoBehaviour
 {
     public static ConnectMgr instance;
+    public GameObject levelSelect;
+    
 
     public int cardNum = 0;
-    public float maxTime;
+    public float maxtime;
+    public int iLv;
 
     //public int irowNum;
     //public float fCard_size;
@@ -22,5 +25,10 @@ public class ConnectMgr : MonoBehaviour
             instance = this;
             DontDestroyOnLoad(gameObject);
         }
+    }
+
+    private void Start()
+    {
+        levelSelect.SetActive(false);
     }
 }

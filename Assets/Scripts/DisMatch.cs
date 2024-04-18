@@ -22,7 +22,7 @@ public class DisMatch : MonoBehaviour
 
     public void Bbik()
     {
-        audioSource.volume = 0.1f;
+        audioSource.volume = 0.05f;
         audioSource.PlayOneShot(clip);
         
     }
