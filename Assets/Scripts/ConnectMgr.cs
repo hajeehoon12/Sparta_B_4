@@ -5,6 +5,8 @@ using UnityEngine;
 public class ConnectMgr : MonoBehaviour
 {
     public static ConnectMgr instance;
+    public GameObject levelSelect;
+    
 
     public int cardNum = 0;
     public float maxTime;
@@ -22,5 +24,10 @@ public class ConnectMgr : MonoBehaviour
             instance = this;
             DontDestroyOnLoad(gameObject);
         }
+    }
+
+    private void Start()
+    {
+        levelSelect.SetActive(false);
     }
 }
