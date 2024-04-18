@@ -36,15 +36,15 @@ public class HighScoreManager : MonoBehaviour
             if (best < GameManager.instance.totalScore)
             {
                 PlayerPrefs.SetFloat(BestScore + num.ToString(), GameManager.instance.totalScore);
-                GameManager.instance.BestTxt.text = GameManager.instance.totalScore.ToString("N2");
+                GameManager.instance.BestTxt.text = GameManager.instance.totalScore.ToString("N1");
             }else
             {
-                GameManager.instance.BestTxt.text = best.ToString("N2");
+                GameManager.instance.BestTxt.text = best.ToString("N1");
             }
         }else
         {
             PlayerPrefs.SetFloat(BestScore + num.ToString(), GameManager.instance.totalScore);
-            GameManager.instance.BestTxt.text = GameManager.instance.totalScore.ToString("N2");
+            GameManager.instance.BestTxt.text = GameManager.instance.totalScore.ToString("N1");
         }
     }
 
@@ -57,16 +57,16 @@ public class HighScoreManager : MonoBehaviour
             switch (i) // i = level
             {
                 case 1:
-                    if (highScore_1 != null) highScore_1.text = stageScore.ToString("N2");
+                    if (highScore_1 != null) highScore_1.text = stageScore.ToString("N1");
                     break;
                 case 2:
-                    if (highScore_2 != null) highScore_2.text = stageScore.ToString("N2");
+                    if (highScore_2 != null) highScore_2.text = stageScore.ToString("N1");
                     break;
                 case 3:
-                    if (highScore_3 != null) highScore_3.text = stageScore.ToString("N2");
+                    if (highScore_3 != null) highScore_3.text = stageScore.ToString("N1");
                     break;
                 case 4:
-                    if (highScore_4 != null) highScore_4.text = stageScore.ToString("N2");
+                    if (highScore_4 != null) highScore_4.text = stageScore.ToString("N1");
                     break;
             
             }
