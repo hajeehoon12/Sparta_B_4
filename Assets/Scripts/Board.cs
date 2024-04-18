@@ -39,7 +39,8 @@ public class Board : MonoBehaviour
 
         arr = arr.OrderBy(x => Random.Range(0, cardNum + 1)).ToArray(); //Random.Range에서 float값은 이상,이하. int값은 이상,미만이어서 1을더해서 범위를 잡도록함
 
-        sprite = Resources.LoadAll<Sprite>("rtan");
+        //sprite = Resources.LoadAll<Sprite>("rtan");
+        sprite = Resources.LoadAll<Sprite>("B4");
 
         length = (int)Mathf.Sqrt(cardNum); //카드갯수의 제곱근. 카드 16장이면 4^2
         cardDist = 5.8f / length;       // 카드사이 간격. //5.8f는 사용하는 화면 폭 / 카드 열
