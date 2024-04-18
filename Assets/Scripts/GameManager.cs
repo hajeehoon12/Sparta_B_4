@@ -170,7 +170,7 @@ public class GameManager : MonoBehaviour
     }
     public void Wait5Sec()
     {
-        firstCard.CloseCard();
+        firstCard.CloseCard(); // test
         firstCard = null;
 
     }
