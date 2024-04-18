@@ -436,7 +436,7 @@ GameObject:
   - component: {fileID: 225196794}
   - component: {fileID: 225196793}
   m_Layer: 5
-  m_Name: Text (Legacy)
+  m_Name: Level4_txt
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -572,7 +572,7 @@ GameObject:
   - component: {fileID: 393302288}
   - component: {fileID: 393302287}
   m_Layer: 5
-  m_Name: Button (Legacy) (2)
+  m_Name: Button_Lv3
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -969,7 +969,7 @@ GameObject:
   - component: {fileID: 746196076}
   - component: {fileID: 746196075}
   m_Layer: 5
-  m_Name: Text (Legacy)
+  m_Name: Level3_txt
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -1504,7 +1504,7 @@ GameObject:
   - component: {fileID: 1287099475}
   - component: {fileID: 1287099474}
   m_Layer: 5
-  m_Name: Button (Legacy) (1)
+  m_Name: Button_Lv2
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -1690,7 +1690,7 @@ GameObject:
   - component: {fileID: 1372016604}
   - component: {fileID: 1372016607}
   m_Layer: 5
-  m_Name: Button (Legacy)
+  m_Name: Button_Lv1
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -1904,7 +1904,7 @@ GameObject:
   - component: {fileID: 1482551144}
   - component: {fileID: 1482551143}
   m_Layer: 5
-  m_Name: Button (Legacy) (3)
+  m_Name: Button_Lv4
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -2246,7 +2246,7 @@ GameObject:
   - component: {fileID: 1712962540}
   - component: {fileID: 1712962539}
   m_Layer: 5
-  m_Name: Text (Legacy)
+  m_Name: Level1_txt
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -2659,7 +2659,7 @@ GameObject:
   - component: {fileID: 2066115225}
   - component: {fileID: 2066115224}
   m_Layer: 5
-  m_Name: Text (Legacy)
+  m_Name: Level2_txt
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
