@@ -8,6 +8,7 @@ public class HighScoreManager : MonoBehaviour
 {
     public static HighScoreManager instance;
 
+
     public float highScore = 0;
 
     public Text highScoreTxt;
@@ -46,6 +47,23 @@ public class HighScoreManager : MonoBehaviour
             PlayerPrefs.SetFloat(BestScore + num.ToString(), GameManager.instance.totalScore);
             GameManager.instance.BestTxt.text = GameManager.instance.totalScore.ToString("N1");
         }
+    }
+
+
+
+
+
+    
+
+    public void Record_High_Score(float totalScore)
+    {
+        if (PlayerPrefs.HasKey("highScore"))
+        {
+            highScore = PlayerPrefs.GetFloat("highScore");
+
+        
+        }
+        
     }
 
     private void Update()
