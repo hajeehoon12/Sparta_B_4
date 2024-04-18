@@ -13,6 +13,8 @@ public class HighScoreManager : MonoBehaviour
 
     public Text highScoreTxt;
 
+    public float stageScore;
+
     public string BestScore = "";
 
     public Text highScore_1;
@@ -70,7 +72,7 @@ public class HighScoreManager : MonoBehaviour
     {
         for (int i = 1; i < 5; i++)
         {
-            float stageScore=PlayerPrefs.GetFloat(BestScore + i.ToString());
+            stageScore=PlayerPrefs.GetFloat(BestScore + i.ToString());
             
             switch (i) // i = level
             {

@@ -5,6 +5,7 @@ using UnityEngine;
 using UnityEngine.U2D;
 using UnityEngine.UI;
 
+
 public class GameManager : MonoBehaviour
 {
 
@@ -23,9 +24,10 @@ public class GameManager : MonoBehaviour
     public Text tryTxt;
     public Text totalTxt;
 
-    
 
-    
+
+    public GameObject highScore;
+    public Text highScoreTxt;
     
 
     AudioSource audioSource;
@@ -75,7 +77,12 @@ public class GameManager : MonoBehaviour
         Time.timeScale = 1f;
         audioSource = GetComponent<AudioSource>();
 
-        
+
+        highScore.SetActive(true);
+        highScoreTxt.text = PlayerPrefs.GetFloat(HighScoreManager.instance.BestScore + Board.Instance.iLv.ToString()).ToString("N1");
+
+
+
     }
     
     // Update is called once per frame
@@ -102,6 +109,8 @@ public class GameManager : MonoBehaviour
             AudioManager.instance.StopSound();
             this.timeTxt.color = Color.red;
         }
+        
+
 
 
     }
@@ -163,6 +172,7 @@ public class GameManager : MonoBehaviour
             time = 0;
         }
         HighScoreManager.instance.Record_High_Score(totalScore);
+        highScore.SetActive(false);
     }
 
     void Fail()
