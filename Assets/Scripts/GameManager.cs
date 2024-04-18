@@ -15,6 +15,7 @@ public class GameManager : MonoBehaviour
     public Card secondCard;
 
     public Text successTxt;
+    public Text BestTxt;
 
     public Text timeTxt;
     public GameObject endTxt;
@@ -38,8 +39,10 @@ public class GameManager : MonoBehaviour
    // bool waiting = false;
 
 
-    float totalScore = 0f;
+    public float totalScore = 0f;
     float waitTime = 0f;
+    
+    
 
 
     public int cardCount = 0;
@@ -154,6 +157,7 @@ public class GameManager : MonoBehaviour
         tryTxt.text = tryCount.ToString();
         totalScore = time - tryCount/10 + cardMax;
         totalTxt.text = totalScore.ToString("N2");
+        HighScoreManager.instance.Record_High_Score(Board.Instance.iLv);
         if (time < 0)
         {
             time = 0;
@@ -188,10 +192,13 @@ public class GameManager : MonoBehaviour
 
     public void SetLv()
     {
-        Board.Instance.cardNum = 16;
-        maxtime = 30f;
+        
+        Board.Instance.cardNum = 16; 
+        maxtime = 30f; //default
         Board.Instance.cardNum = ConnectMgr.instance.cardNum;
-        maxtime = ConnectMgr.instance.maxTime;
+        time = ConnectMgr.instance.maxtime;
+        maxtime = ConnectMgr.instance.maxtime;
+        Board.Instance.iLv = ConnectMgr.instance.iLv;
     }
 
 

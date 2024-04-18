@@ -13,11 +13,12 @@ public class RetryButton : MonoBehaviour
         AudioManager.instance.audioSource.Play();
     }
 
+
     public void LevelSelect()
     {
         SceneManager.LoadScene("StartScene");
         
-    }
+
 
     public void SelectLV()
     {
@@ -50,32 +51,37 @@ public class RetryButton : MonoBehaviour
     {
         //레벨 요소
         ConnectMgr.instance.cardNum = 16;
-        ConnectMgr.instance.maxTime = 30f;
-        
+        ConnectMgr.instance.maxtime = 30f;
+        ConnectMgr.instance.iLv = 1;
+
+
     }
     public void Lv2()
     {
         //레벨 요소
-        ConnectMgr.instance.cardNum = 18;
-        ConnectMgr.instance.maxTime = 30f;
+        ConnectMgr.instance.cardNum = 20;
+        ConnectMgr.instance.maxtime = 30f;
+        ConnectMgr.instance.iLv = 2;
         //보드 요소
-        
+
     }
     public void Lv3()
     {
         //레벨 요소
-        ConnectMgr.instance.cardNum = 20;
-        ConnectMgr.instance.maxTime = 30f;
+        ConnectMgr.instance.cardNum = 24;
+        ConnectMgr.instance.maxtime = 30f;
+        ConnectMgr.instance.iLv = 3;
         //보드 요소
-        
     }
 
     public void Lv4()
     {
         //레벨 요소
-        ConnectMgr.instance.cardNum = 24;
-        ConnectMgr.instance.maxTime = 30f;
+        ConnectMgr.instance.cardNum = 30;
+        ConnectMgr.instance.maxtime = 50f;
+        ConnectMgr.instance.iLv = 4;
         //보드 요소        
+
     }
 
 }

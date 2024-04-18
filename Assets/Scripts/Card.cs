@@ -50,14 +50,14 @@ public class Card : MonoBehaviour
         front.SetActive(true);
         back.SetActive(false);
 
-        //firstCard°¡ ºñ¾ú´Ù¸é, ³» Á¤º¸¸¦ ³Ñ°ÜÁÖ°í
+        //firstCardê°€ ë¹„ì—ˆë‹¤ë©´, ë‚´ ì •ë³´ë¥¼ ë„˜ê²¨ì£¼ê³ 
 
         if (GameManager.instance.firstCard == null)
         {
-            GameManager.instance.firstCard = this; // card ClassÀÇ Á¤º¸¸¦ ³Ñ°ÜÁØ´Ù.
+            GameManager.instance.firstCard = this; // card Classì˜ ì •ë³´ë¥¼ ë„˜ê²¨ì¤€ë‹¤.
             
         }
-        else //firstCard°¡ Á¸ÀçÇÑ´Ù¸é, secondCard¿¡ ³»Á¤º¸¸¦ ³Ñ°ÜÁÖ°í ºñ±³ÇÑ´Ù.
+        else //firstCardê°€ ì¡´ì¬í•œë‹¤ë©´, secondCardì— ë‚´ì •ë³´ë¥¼ ë„˜ê²¨ì£¼ê³  ë¹„êµí•œë‹¤.
         {
             GameManager.instance.secondCard = this;
             GameManager.instance.Matched();
@@ -75,8 +75,8 @@ public class Card : MonoBehaviour
     void DestroyCardInvoke()
     {
         Destroy(gameObject);
-
     }
+
 
 
 

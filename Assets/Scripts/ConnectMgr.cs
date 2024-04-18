@@ -9,7 +9,8 @@ public class ConnectMgr : MonoBehaviour
     
 
     public int cardNum = 0;
-    public float maxTime;
+    public float maxtime;
+    public int iLv;
 
     //public int irowNum;
     //public float fCard_size;
