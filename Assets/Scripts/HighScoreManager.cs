@@ -12,6 +12,22 @@ public class HighScoreManager : MonoBehaviour
     private void Awake()
     {
         if (instance == null)
+<<<<<<< Updated upstream
+=======
+        {
+            instance = this;
+        }
+    }
+
+
+
+    
+
+    public void Record_High_Score(float totalScore)
+    {
+        
+        if (totalScore > highScore)
+>>>>>>> Stashed changes
         {
             instance = this;
         }
