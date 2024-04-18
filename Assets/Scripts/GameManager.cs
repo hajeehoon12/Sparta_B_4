@@ -9,7 +9,7 @@ public class GameManager : MonoBehaviour
 {
 
     public static GameManager instance;
-    
+
 
     public Card firstCard;
     public Card secondCard;
@@ -33,7 +33,7 @@ public class GameManager : MonoBehaviour
     bool waiting = false;
 
 
-    
+
 
 
     float totalScore = 0f;
@@ -43,6 +43,7 @@ public class GameManager : MonoBehaviour
     public int cardCount = 0;
     public int cardMax;
     public int tryCount = 0;
+    public int Level;
 
 
     float time = 30f;
@@ -59,7 +60,7 @@ public class GameManager : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        
+
         endTxt.gameObject.SetActive(false);
         musicStart = true;
         defeated = false;
@@ -68,7 +69,7 @@ public class GameManager : MonoBehaviour
 
 
     }
-    
+
     // Update is called once per frame
     void Update()
     {
@@ -86,7 +87,7 @@ public class GameManager : MonoBehaviour
             defeated = true;
             End();
         }
-        if (time < maxtime/2 && musicStart)
+        if (time < maxtime / 2 && musicStart)
         {
             audioSource.PlayOneShot(clip2);
             musicStart = false;
@@ -120,11 +121,11 @@ public class GameManager : MonoBehaviour
 
             Success();
 
-            
+
         }
         else
         {
-            
+
             //Debug.Log("Fail"); // Goal1. When dismatch call fail
             firstCard.CloseCard();
             secondCard.CloseCard();
@@ -146,7 +147,7 @@ public class GameManager : MonoBehaviour
         Time.timeScale = 0f;
         endTxt.gameObject.SetActive(true);
         tryTxt.text = tryCount.ToString();
-        totalScore = time - tryCount/10 + cardMax;
+        totalScore = time - tryCount / 10 + cardMax;
         totalTxt.text = totalScore.ToString("N2");
     }
 
@@ -170,10 +171,10 @@ public class GameManager : MonoBehaviour
     }
     public void Wait5Sec()
     {
-        firstCard.CloseCard(); // test
+        firstCard.CloseCard();
         firstCard = null;
 
     }
-   
-    
+
+
 }
