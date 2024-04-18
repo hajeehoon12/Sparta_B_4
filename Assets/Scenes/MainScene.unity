@@ -982,6 +982,7 @@ MonoBehaviour:
   firstCard: {fileID: 0}
   secondCard: {fileID: 0}
   successTxt: {fileID: 1972053817}
+  BestTxt: {fileID: 781575153}
   timeTxt: {fileID: 1740828762}
   endTxt: {fileID: 1795650986}
   success: {fileID: 1972053815}
@@ -993,6 +994,8 @@ MonoBehaviour:
   clip4: {fileID: 8300000, guid: d54cb2c178d18a54a913b538e822fe5d, type: 3}
   musicStart: 1
   defeated: 0
+  totalScore: 0
+  BastScore: 
   cardCount: 0
   cardMax: 0
   tryCount: 0
