@@ -31,6 +31,23 @@ public class Board : MonoBehaviour
         if (level == 0)
         {
             cardNum = 16;
+        }
+        else if (level == 1)
+        {
+            cardNum = 20;
+        }
+
+        int[] cardArr = new int[cardNum];
+        for (int i = 0; i < cardNum / 2; i++)
+        {
+            cardArr[i + i] = i;
+            cardArr[i + i + 1] = i;
+        }
+
+
+        if (level == 0)
+        {
+            cardNum = 16;
         }else if (level == 1)
         {
             cardNum = 20;
@@ -50,33 +67,32 @@ public class Board : MonoBehaviour
         length = (int)Mathf.Sqrt(cardNum);
         cardDist = 5.8f / length;
 
-            for (int i = 0; i < cardNum; i++)
+
+        for (int i = 0; i < cardNum; i++)
+        {
+
+            GameObject go = Instantiate(card, this.transform); // ,board ï¿½Ø¿ï¿½ ï¿½ï¿½ï¿½ï¿½
+
+
+            float x = (i % length) * cardDist - cardDist * length / 2 + 0.5f * cardDist;
+            float cardY = 0.0f;
+            if (level == 0)
             {
-                
-                GameObject go = Instantiate(card, this.transform); // ,board ¹Ø¿¡ »ý¼º
-
-
-                float x = (i % length) * cardDist - cardDist * length / 2 + 0.5f * cardDist;
-                float cardY = 0.0f;
-                if (level == 0)
-                {
-                    cardY = (i / length) * cardDist - cardDist * length / 2;
-                    
-                }
-                else if (level == 1)
-                {
-                    cardY = (i / length) * cardDist - cardDist * length / 2 * 1.3f;
-                    
-                }
-
-
-                go.transform.position = new Vector2(x, cardY);
-
-                go.GetComponent<Card>().Setting(cardArr[i]); // BoardÀÇ ÇÏÀ§¿¡ ÀÖ´Â Card ScriptÀÇ Component¸¦ °¡Á®¿Í¼­ Setting ÇÔ¼ö¸¦ arr[i]¶ó´Â ¸Å°³º¯¼ö¸¦ ÅëÇØ ½ÇÇà
-                go.transform.localScale = new Vector2(cardDist - 0.1f, cardDist - 0.1f);
+                cardY = (i / length) * cardDist - cardDist * length / 2;
 
             }
-        
+            else if (level == 1)
+            {
+                cardY = (i / length) * cardDist - cardDist * length / 2 * 1.3f;
+
+            }
+
+
+            go.transform.position = new Vector2(x, cardY);
+
+            go.GetComponent<Card>().Setting(cardArr[i]); // Boardï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ ï¿½Ö´ï¿½ Card Scriptï¿½ï¿½ Componentï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ï¿½Í¼ï¿½ Setting ï¿½Ô¼ï¿½ï¿½ï¿½ arr[i]ï¿½ï¿½ï¿½ ï¿½Å°ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½
+            go.transform.localScale = new Vector2(cardDist - 0.1f, cardDist - 0.1f);
+
 
         GameManager.instance.cardCount = cardArr.Length;
         GameManager.instance.cardMax = cardArr.Length;
@@ -84,5 +100,5 @@ public class Board : MonoBehaviour
 
     }
 
-    
+
 }
