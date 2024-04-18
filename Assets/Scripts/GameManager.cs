@@ -177,7 +177,9 @@ public class GameManager : MonoBehaviour
     public void SetLv()
     {
         Board.Instance.cardNum = ConnectMgr.instance.cardNum;
-        maxtime = ConnectMgr.instance.maxTime;
+        time = ConnectMgr.instance.maxtime;
+        maxtime = ConnectMgr.instance.maxtime;
+        Board.Instance.iLv = ConnectMgr.instance.iLv;
     }
 
 
