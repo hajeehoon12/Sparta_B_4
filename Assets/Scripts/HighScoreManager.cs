@@ -51,17 +51,6 @@ public class HighScoreManager : MonoBehaviour
 
 
 
-    
-
-    public void Record_High_Score(float totalScore)
-    {
-        
-        if (totalScore > highScore)
-        {
-            instance = this;
-        }
-    }
-
 
 
     
