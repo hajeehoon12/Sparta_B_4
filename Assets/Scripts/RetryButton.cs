@@ -42,35 +42,34 @@ public class RetryButton : MonoBehaviour
 
     public void Lv1()
     {
-        //·¹º§ ¿ä¼Ò
+        //ë ˆë²¨ ìš”ì†Œ
         ConnectMgr.instance.cardNum = 16;
         ConnectMgr.instance.maxTime = 30f;
         
     }
     public void Lv2()
     {
-        //·¹º§ ¿ä¼Ò
+        //ë ˆë²¨ ìš”ì†Œ
         ConnectMgr.instance.cardNum = 18;
         ConnectMgr.instance.maxTime = 30f;
-        //º¸µå ¿ä¼Ò
+        //ë³´ë“œ ìš”ì†Œ
         
     }
     public void Lv3()
     {
-        //·¹º§ ¿ä¼Ò
+        //ë ˆë²¨ ìš”ì†Œ
         ConnectMgr.instance.cardNum = 20;
         ConnectMgr.instance.maxTime = 30f;
-        //º¸µå ¿ä¼Ò
+        //ë³´ë“œ ìš”ì†Œ
         
     }
 
     public void Lv4()
     {
-        //·¹º§ ¿ä¼Ò
+        //ë ˆë²¨ ìš”ì†Œ
         ConnectMgr.instance.cardNum = 24;
         ConnectMgr.instance.maxTime = 30f;
-        //º¸µå ¿ä¼Ò
-        
+        //ë³´ë“œ ìš”ì†Œ        
     }
 
 }

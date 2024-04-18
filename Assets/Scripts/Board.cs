@@ -26,23 +26,23 @@ public class Board : MonoBehaviour
     void Start()
     {
 
-        //int[] arr = {0,0,1,1,2,2,3,3,4,4,5,5,6,6,7,7}; //±âÁ¸ ÄÚµå
+        //int[] arr = {0,0,1,1,2,2,3,3,4,4,5,5,6,6,7,7}; //ê¸°ì¡´ ì½”ë“œ
         int[] arr = new int[cardNum];
         for(int i = 0; i < arr.Length; ++i)
         {
             arr[i] = (i / 2);
         }
 
-        arr = arr.OrderBy(x => Random.Range(0, cardNum + 1)).ToArray(); //Random.Range¿¡¼­ float°ªÀº ÀÌ»ó,ÀÌÇÏ. int°ªÀº ÀÌ»ó,¹Ì¸¸ÀÌ¾î¼­ 1À»´õÇØ¼­ ¹üÀ§¸¦ Àâµµ·ÏÇÔ
+        arr = arr.OrderBy(x => Random.Range(0, cardNum + 1)).ToArray(); //Random.Rangeì—ì„œ floatê°’ì€ ì´ìƒ,ì´í•˜. intê°’ì€ ì´ìƒ,ë¯¸ë§Œì´ì–´ì„œ 1ì„ë”í•´ì„œ ë²”ìœ„ë¥¼ ì¡ë„ë¡í•¨
 
         sprite = Resources.LoadAll<Sprite>("rtan");
 
-        length = (int)Mathf.Sqrt(cardNum); //Ä«µå°¹¼öÀÇ Á¦°ö±Ù. Ä«µå 16ÀåÀÌ¸é 4^2
-        cardDist = 5.8f / length;       // Ä«µå»çÀÌ °£°İ. //5.8f´Â »ç¿ëÇÏ´Â È­¸é Æø / Ä«µå ¿­
+        length = (int)Mathf.Sqrt(cardNum); //ì¹´ë“œê°¯ìˆ˜ì˜ ì œê³±ê·¼. ì¹´ë“œ 16ì¥ì´ë©´ 4^2
+        cardDist = 5.8f / length;       // ì¹´ë“œì‚¬ì´ ê°„ê²©. //5.8fëŠ” ì‚¬ìš©í•˜ëŠ” í™”ë©´ í­ / ì¹´ë“œ ì—´
 
         for (int i = 0; i < cardNum; i++)
         {
-            GameObject go = Instantiate(card, this.transform); // ,board ¹Ø¿¡ »ı¼º
+            GameObject go = Instantiate(card, this.transform); // ,board ë°‘ì— ìƒì„±
 
             float x = (i % length) * cardDist - cardDist * length / 2 + 0.5f * cardDist ; 
             float y = (i / length) * cardDist - cardDist * length / 2 ;
@@ -50,8 +50,8 @@ public class Board : MonoBehaviour
             
             go.transform.position = new Vector2(x, y);
             
-            go.GetComponent<Card>().Setting(arr[i]); // BoardÀÇ ÇÏÀ§¿¡ ÀÖ´Â Card ScriptÀÇ Component¸¦ °¡Á®¿Í¼­ Setting ÇÔ¼ö¸¦ arr[i]¶ó´Â ¸Å°³º¯¼ö¸¦ ÅëÇØ ½ÇÇà
-            go.transform.localScale = new Vector2(cardDist - 0.1f, cardDist - 0.1f); //ÀÛµ¿ÇØ¿ä?
+            go.GetComponent<Card>().Setting(arr[i]); // Boardì˜ í•˜ìœ„ì— ìˆëŠ” Card Scriptì˜ Componentë¥¼ ê°€ì ¸ì™€ì„œ Setting í•¨ìˆ˜ë¥¼ arr[i]ë¼ëŠ” ë§¤ê°œë³€ìˆ˜ë¥¼ í†µí•´ ì‹¤í–‰
+            go.transform.localScale = new Vector2(cardDist - 0.9f, cardDist - 0.9f); //ì‘ë™í•´ìš”?
 
         }
 
@@ -59,6 +59,6 @@ public class Board : MonoBehaviour
         GameManager.instance.cardMax = arr.Length;
     }
 
-    // ³­ÀÌµµ ¼±ÅÃ¸¶´Ù 
+    // ë‚œì´ë„ ì„ íƒë§ˆë‹¤ 
     
 }
