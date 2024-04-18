@@ -6,16 +6,17 @@ public class Wait5 : MonoBehaviour
 {
     private IEnumerator m_Coroutine;
 
+
     void Start()
     {
         m_Coroutine = CoroutineMethod();
-        StartCoroutine(m_Coroutine); // ÄÚ·çÆ¾À» ½ÃÀÛÇÏ´Â ÇÔ¼ö
+        StartCoroutine(m_Coroutine); // ì½”ë£¨í‹´ì„ ì‹œì‘í•˜ëŠ” í•¨ìˆ˜
     }
 
-    IEnumerator CoroutineMethod() // ¨è
+    IEnumerator CoroutineMethod() // â‘¡
     {
         
-        yield return new WaitForSeconds(5f); // ¨é
+        yield return new WaitForSeconds(5f); // â‘¢
         GameManager.instance.Wait5Sec();
         
     }
