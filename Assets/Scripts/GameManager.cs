@@ -42,7 +42,7 @@ public class GameManager : MonoBehaviour
     public float totalScore = 0f;
     float waitTime = 0f;
     
-    public string BastScore = "";
+    
 
 
     public int cardCount = 0;
@@ -157,7 +157,7 @@ public class GameManager : MonoBehaviour
         tryTxt.text = tryCount.ToString();
         totalScore = time - tryCount/10 + cardMax;
         totalTxt.text = totalScore.ToString("N2");
-        HighScoreManager.instance.Record_High_Score(Board.Instance.cardNum);
+        HighScoreManager.instance.Record_High_Score(Board.Instance.iLv);
         if (time < 0)
         {
             time = 0;
