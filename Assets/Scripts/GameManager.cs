@@ -30,7 +30,7 @@ public class GameManager : MonoBehaviour
 
     public bool musicStart = true;
     public bool defeated = false;
-    bool waiting = false;
+    //bool waiting = false;
 
 
     
@@ -43,6 +43,7 @@ public class GameManager : MonoBehaviour
     public int cardCount = 0;
     public int cardMax;
     public int tryCount = 0;
+    public int Level;
 
 
     float time = 30f;
@@ -170,7 +171,7 @@ public class GameManager : MonoBehaviour
     }
     public void Wait5Sec()
     {
-        firstCard.CloseCard(); // test
+        firstCard.CloseCard();
         firstCard = null;
 
     }
