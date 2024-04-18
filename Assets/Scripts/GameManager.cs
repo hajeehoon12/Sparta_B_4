@@ -22,6 +22,11 @@ public class GameManager : MonoBehaviour
     public Text tryTxt;
     public Text totalTxt;
 
+    
+
+    
+    
+
     AudioSource audioSource;
     public AudioClip clip; // match
     public AudioClip clip2; // when time is left half
@@ -40,6 +45,8 @@ public class GameManager : MonoBehaviour
     public int cardCount = 0;
     public int cardMax;
     public int tryCount = 0;
+
+
 
 
     float time = 30f;
@@ -65,7 +72,7 @@ public class GameManager : MonoBehaviour
         Time.timeScale = 1f;
         audioSource = GetComponent<AudioSource>();
 
-
+        
     }
     
     // Update is called once per frame
@@ -147,6 +154,11 @@ public class GameManager : MonoBehaviour
         tryTxt.text = tryCount.ToString();
         totalScore = time - tryCount/10 + cardMax;
         totalTxt.text = totalScore.ToString("N2");
+        if (time < 0)
+        {
+            time = 0;
+        }
+
     }
 
     void Fail()
@@ -176,6 +188,8 @@ public class GameManager : MonoBehaviour
 
     public void SetLv()
     {
+        Board.Instance.cardNum = 16;
+        maxtime = 30f;
         Board.Instance.cardNum = ConnectMgr.instance.cardNum;
         time = ConnectMgr.instance.maxtime;
         maxtime = ConnectMgr.instance.maxtime;
