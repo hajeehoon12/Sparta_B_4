@@ -46,10 +46,6 @@ public class Card : MonoBehaviour
 
         Pointer.instance.EffectOn(); // pointer effect activate
 
-        anim.SetBool("isOpen", true);
-        front.SetActive(true);
-        back.SetActive(false);
-
         //firstCard가 비었다면, 내 정보를 넘겨주고
 
         if (GameManager.instance.firstCard == null)
@@ -62,11 +58,14 @@ public class Card : MonoBehaviour
             GameManager.instance.secondCard = this;
             GameManager.instance.Matched();
         }
+        anim.SetBool("isOpen", true);
+        front.SetActive(true);
+        back.SetActive(false);
     }
 
 
 
-
+    
     public void DestroyCard()
     {
         Invoke("DestroyCardInvoke", 0.45f);
@@ -76,7 +75,7 @@ public class Card : MonoBehaviour
     {
         Destroy(gameObject);
     }
-
+    
 
 
 

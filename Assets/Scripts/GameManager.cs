@@ -125,8 +125,10 @@ public class GameManager : MonoBehaviour
 
             audioSource.PlayOneShot(clip);
 
+            
             firstCard.DestroyCard();
             secondCard.DestroyCard();
+            
 
             cardCount -= 2;
             tryCount += 2;
@@ -195,8 +197,11 @@ public class GameManager : MonoBehaviour
     }
     public void Wait5Sec()
     {
+        Debug.Log("Enter Wait5Sec()");
         firstCard.CloseCard();
+        Debug.Log("After CloseCard()");
         firstCard = null;
+        Debug.Log("null");
 
     }
 
