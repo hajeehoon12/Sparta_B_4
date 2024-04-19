@@ -16,6 +16,7 @@ public class RetryButton : MonoBehaviour
     public void SelectLevel()
     {
         SceneManager.LoadScene("StartScene");
+        Time.timeScale = 1.0f;
     }
 
     public void SelectLV()
